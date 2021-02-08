@@ -16,3 +16,7 @@ button {
 .test {
  border-radius: 6px;
 }
+
+.ant-checkbox-wrapper {
+  padding-left: 68px;
+}
