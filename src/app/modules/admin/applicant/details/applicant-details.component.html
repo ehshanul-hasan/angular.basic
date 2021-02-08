@@ -1,0 +1,21 @@
+
+<nz-card nzTitle="Applicant Details" [nzExtra]="actionTemplate" [nzLoading]='loader'>
+    <nz-descriptions nzLayout="vertical">
+        <nz-descriptions-item nzTitle="{{'name'|translate}}">{{applicant?.name}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="{{'family.name'|translate}}">{{applicant?.familyName}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="{{'country.of.origin'|translate}}">{{applicant?.countryOfOrigin}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="{{'email'|translate}}">{{applicant?.emailAddress}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="{{'age.office'|translate}}">{{applicant?.age}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="{{'address'|translate}}">
+          {{applicant?.address}}
+        </nz-descriptions-item>
+      </nz-descriptions>
+</nz-card>
+
+
+<ng-template #actionTemplate>
+    <button (click)="cancel()" nz-button class="btn-custom">
+      {{'back.to.list'|translate}}
+    </button>
+</ng-template>
+

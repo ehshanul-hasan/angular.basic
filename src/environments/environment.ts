@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  langFilePath: '/assets/i18n/',
+  serverUri: 'https://localhost:44355',
+  baseUrl: 'https://localhost:44355/api'
 };
 
 /*

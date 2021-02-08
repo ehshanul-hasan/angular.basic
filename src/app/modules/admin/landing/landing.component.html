@@ -1,0 +1,52 @@
+
+  <nz-layout>
+    <nz-sider nzCollapsible nzWidth="200px">
+      <div class="logo"></div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item  *ngFor="let nav_menu of nav_menus; let i = index">
+          <i nz-icon nzType="user"></i>
+          <span (click)="onMenuItemClick(i)">{{nav_menu|translate}}</span>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+          <!-- <li nz-menu-item >
+            {{'applicant.service'|translate}}
+          </li> -->
+          <li nz-menu-item class="right-aligned">
+            <div class="user-menu" nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+                <span class="user-name">{{'admin'|translate}}</span>
+                <nz-avatar  nzSize="large" nzIcon="user">
+                </nz-avatar>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                    <ul nz-menu style="width: 160px;">
+                        <li  nz-menu-item>
+                            <i nz-icon nzType="profile"></i>
+                            <span>{{'profile'|translate}}</span>
+                        </li>
+                        <li  nz-menu-item >
+                            <i nz-icon nzType="logout"></i>
+                            <span>{{'logout'|translate}}</span>
+                        </li>
+                    </ul>
+                </nz-dropdown-menu>
+            </div>
+          </li>
+        </ul>
+      </nz-header>
+      <nz-content>
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>{{'admin'|translate}}</nz-breadcrumb-item>
+          <nz-breadcrumb-item>{{current_nav_menu|translate}}</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer>Application ©2021 Implemented By Ehshan</nz-footer>
+    </nz-layout>
+  </nz-layout>
+  
+  

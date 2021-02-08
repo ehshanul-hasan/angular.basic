@@ -1,0 +1,34 @@
+<nz-page-header>
+  <nz-page-header-title>
+    <button nz-button nzType="primary" (click)="create(0)">
+      {{'create.new'|translate}}
+    </button>
+  </nz-page-header-title>
+</nz-page-header>
+
+<nz-table #basicTable [nzData]="applicants" [nzLoading]="loading" [nzFrontPagination]="false" [nzTotal]="tableFilters.total" [(nzPageIndex)]="tableFilters.page_index" [nzPageSize]="tableFilters.page_size" (nzPageIndexChange)="list()">
+  <thead>
+    <tr>
+      <th>{{'name'|translate}}</th>
+      <th>{{'family.name'|translate}}</th>
+      <th>{{'email'|translate}}</th>
+      <th>{{'country.of.origin'|translate}}</th>
+      <th>{{'hired'|translate}}</th>
+      <th>{{'action'|translate}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data" (click)="details(data.id)">
+      <td>{{ data.name }}</td>
+      <td>{{ data.familyName }}</td>
+      <td>{{ data.emailAddress }} </td>
+      <td>{{ data.countryOfOrigin }}</td>
+      <td>{{ data.hired }}</td>
+      <td [nzRight]="true" [nzEllipsis]="false">
+        <button nz-button (click)="$event.stopPropagation();create(data.id)">{{'edit'|translate}}</button>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-popconfirm nzPopconfirmTitle="{{'are.you.sure.delete.this.applicant?'|translate}}" (click)="$event.stopPropagation()" (nzOnConfirm)="delete(data.id)" nzPopconfirmPlacement="bottomRight" nz-button>{{'delete'|translate}}</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

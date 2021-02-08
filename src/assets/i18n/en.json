@@ -1,0 +1,23 @@
+﻿{
+    "applicant": "Applicant",
+    "applicant.service": "Applicant Service",
+    "admin": "Admin",
+    "profile": "Profile",
+    "logout": "Log out",
+    "create.new": "Create New",
+    "name": "Name",
+    "family.name": "Family Name",
+    "age": "Age",
+    "hired": "Hired",
+    "address": "Address",
+    "country.of.origin": "Country",
+    "create": "Create",
+    "cancel": "Cancel",
+    "email": "Email",
+    "edit": "Edit",
+    "delete": "Delete",
+    "are.you.sure.delete.this.applicant?" : "Are you sure delete this applicant?",
+    "back.to.list": "Back To List",
+    "please.insert.valid.data": "Please insert valid data",
+    "action": "Action"
+}

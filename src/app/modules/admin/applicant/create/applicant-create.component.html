@@ -1,0 +1,91 @@
+
+<nz-card nzTitle="Add Applicant" [nzActions]="[actionTemplate]" [nzLoading]='loader'>
+    <form nz-form [formGroup]="applicantForm">
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="8">
+                <nz-form-item class="field-container">
+                    <nz-form-label [nzSpan]="6" nzFor="name">{{'name'|translate}}</nz-form-label>
+                    <nz-form-control nzHasFeedback nzErrorTip="{{'please.insert.valid.data'|translate}}">
+                        <input type="text" nz-input formControlName="name" placeholder="{{'name'|translate}}" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <div nz-col [nzSpan]="8">
+                <nz-form-item class="field-container">
+                    <nz-form-label [nzSpan]="6" nzFor="familyName">{{'family.name'|translate}}</nz-form-label>
+                    <nz-form-control nzHasFeedback nzErrorTip="{{'please.insert.valid.data'|translate}}">
+                        <input type="text" nz-input formControlName="familyName" placeholder="Family Name" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <div nz-col [nzSpan]="8">
+                <nz-form-item class="field-container">
+                    <nz-form-label [nzSpan]="6" nzFor="countryOfOrigin">{{'country.of.origin'|translate}}</nz-form-label>
+                    <nz-form-control nzHasFeedback nzErrorTip="{{'please.insert.valid.data'|translate}}">
+                        <input type="text" nz-input formControlName="countryOfOrigin"
+                            placeholder="country Of Origin" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div>
+
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="8">
+                <nz-form-item class="field-container">
+                    <nz-form-label [nzSpan]="6" nzFor="emailAddress">{{'email'|translate}}</nz-form-label>
+                    <nz-form-control nzHasFeedback nzErrorTip="{{'please.insert.valid.data'|translate}}">
+                        <input type="text" nz-input formControlName="emailAddress" placeholder="Email" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <div nz-col [nzSpan]="8">
+                <nz-form-item class="field-container">
+                    <nz-form-label [nzSpan]="6" nzFor="age">{{'age'|translate}}</nz-form-label>
+                    <nz-form-control nzHasFeedback nzErrorTip="{{'please.insert.valid.data'|translate}}">
+                        <input type="text" nz-input formControlName="age" placeholder="Age" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <div nz-col [nzSpan]="8">
+                <nz-form-item class="field-container">
+                    <label nz-checkbox name="hired" formControlName="hired">{{'hired'|translate}}</label>
+                </nz-form-item>
+            </div>
+        </div>
+
+        <div nz-row [nzGutter]="24">
+            <div nz-col [nzSpan]="8">
+                <nz-form-item class="field-container">
+                    <nz-form-label [nzSpan]="6" nzFor="address">{{'address'|translate}}</nz-form-label>
+                    <nz-form-control nzHasFeedback nzErrorTip="{{'please.insert.valid.data'|translate}}">
+                        <textarea nz-input formControlName="address" placeholder="Address">
+                        </textarea>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+        </div> 
+    </form>
+</nz-card>
+
+
+<ng-template #actionTemplate>
+    <div class="column">
+        <button (click)="cancel()" nz-button class="btn-custom">
+            {{'cancel'|translate}}
+        </button>
+        <button (click)="submit()" nz-button class="btn-custom" nzType="primary">
+            <span *ngIf="id.length > 0">
+                {{'update'|translate}}
+            </span>
+            <span *ngIf="!(id.length > 0)">
+                {{'create'|translate}}
+            </span>
+        </button>
+    </div>
+</ng-template>
+
+
