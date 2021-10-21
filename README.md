@@ -28,3 +28,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 This is a basic angular app which inclused all basic features and standard coding style. This app is synced with https://github.com/ehshanul-hasan/Dot.Net.Core.CRUD for back end api. An aurelia version for the same app is available in https://github.com/ehshanul-hasan/aurelia.basic.
+
+This project includes all the basics with server call and transaltor facility as well in angular.
